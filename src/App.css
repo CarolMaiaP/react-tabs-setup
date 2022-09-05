@@ -65,7 +65,7 @@ button::before {
   content: "";
   width: 100px;
   height: 30px;
-  border-left: 3px solid #5f9bb1;
+  border-left: 3px solid transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -73,6 +73,14 @@ button::before {
 
 button:hover {
   color: #5f9bb1;
+}
+
+button:hover:before {
+  border-left: 3px solid #5f9bb1;
+}
+
+button:focus:before {
+  border-left: 3px solid #5f9bb1;
 }
 
 button:focus,
