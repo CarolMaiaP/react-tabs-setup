@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { useEffect, useState } from "react";
 import {FaAngleDoubleRight} from 'react-icons/fa'
+import { TabsContext } from '../contexts/TabsContext';
 import { TabsButton } from './TabsButton';
 
 const url = 'https://course-api.com/react-tabs-project';
 
 export function Tabs(){
   const [loading, setLoading] = useState(true);
-  const [jobs, setJobs] = useState([]);
-  const [value, setValue] = useState(0);
+  const {jobs, setJobs, value}:any = useContext(TabsContext)
 
   async function fetchJobs(){
     const response = await fetch(url);
