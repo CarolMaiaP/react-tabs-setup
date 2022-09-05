@@ -6,7 +6,9 @@
 }
 
 .jobs {
-  width: 650px;
+  width: 900px;
+  display: flex;
+  gap: 5rem;
 }
 
 h2 {
@@ -39,4 +41,10 @@ h2::after {
 .duties-content svg {
   width: 35px;
   color: #5f9bb1;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }

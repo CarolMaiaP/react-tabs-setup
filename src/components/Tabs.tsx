@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from "react";
 import {FaAngleDoubleRight} from 'react-icons/fa'
+import { TabsButton } from './TabsButton';
 
 const url = 'https://course-api.com/react-tabs-project';
-
 
 export function Tabs(){
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
 
   async function fetchJobs(){
     const response = await fetch(url);
@@ -43,18 +43,21 @@ export function Tabs(){
   return(
     <div>
       <h2>Tabs Project Setup</h2>
-      <div className="jobs">
-        <h3>{title}</h3>
+      <h3>{title}</h3>
         <p>{company}</p>
         <p>{dates}</p>
-          {duties.map((duty, index) => {
-              return (
-                <div className='duties-content' key={index}>
-                  <FaAngleDoubleRight/>
-                  <p>{duty}</p>
-                </div>
-              )
-            })}
+      <div className="jobs">
+        <TabsButton/>
+          <div className="job-duty">
+            {duties.map((duty, index) => {
+                return (
+                  <div className='duties-content' key={index}>
+                    <FaAngleDoubleRight/>
+                    <p>{duty}</p>
+                  </div>
+                )
+              })}
+          </div>
       </div>
     </div>
   )
