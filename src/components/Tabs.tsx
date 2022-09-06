@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useEffect, useState } from "react";
 import {FaAngleDoubleRight} from 'react-icons/fa'
 import { TabsContext } from '../contexts/TabsContext';
+import { TabsContainer } from './Tabs.styled';
 import { TabsButton } from './TabsButton';
 
 const url = 'https://course-api.com/react-tabs-project';
@@ -41,7 +42,7 @@ export function Tabs(){
   const {company, dates, duties, title}:JobsProps = jobs[value]
 
   return(
-    <div>
+    <TabsContainer>
       <h2>Tabs Project Setup</h2>
       <h3>{title}</h3>
         <p>{company}</p>
@@ -59,6 +60,6 @@ export function Tabs(){
               })}
           </div>
       </div>
-    </div>
+      </TabsContainer>
   )
 }
